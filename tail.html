@@ -1,0 +1,24 @@
+</table>
+<script type="text/javascript">
+
+    function doDiff(){
+        for (var i = 0; i <fileCount; i++) {
+        var rawDiff = document.getElementById('rawDiff'+i).value;
+        var outDiff = document.getElementById('outDiff'+i)
+
+        var diffHtml = Diff2Html.getPrettyHtml(rawDiff, {
+                                                            inputFormat: 'diff', 
+                                                            showFiles: false, 
+                                                            matching: 'words', 
+                                                            outputFormat: 'side-by-side'
+                                                        }
+                                                );
+        outDiff.innerHTML = diffHtml;
+    }
+    }
+
+    doDiff();
+
+</script>
+</body>
+</html>
