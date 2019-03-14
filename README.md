@@ -1,6 +1,6 @@
 # Whatchanged?
 
-This is a simple bash script] to help me share a report of file changed between two commits. I [started](https://gist.github.com/palaniraja/2bb7d7d64eef279e683b43e19c56c555) this as I could not find a way to `pipe` the `git log` output with `xargs`. 
+This is a simple bash script to help me share a report of file changed between two commits. I [started](https://gist.github.com/palaniraja/2bb7d7d64eef279e683b43e19c56c555) this as I could not find a way to `pipe` the `git log` output with `xargs`. 
 
 Anyhow, bash script ended up better options for writing it as html for other posibilities.
 
