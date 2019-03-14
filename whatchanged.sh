@@ -11,7 +11,8 @@ git log --pretty='format:' --name-only $1..$2 | sort -u | while read line
 do
     if [ -n "${line}" ]; then
         `echo "\n\n\n\nFile: ($line)\n--------------------------------------------\n" >> out.txt`
-        git log --pretty=oneline  --abbrev-commit  --all --full-history -- $line >> out.txt
+        git log --pretty=oneline  --abbrev-commit $1..$2  -- $line >> out.txt
+        # --all --full-history
     fi
 done
 
