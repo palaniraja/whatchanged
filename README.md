@@ -27,6 +27,7 @@ sh whatchanged.sh 3b9aea39c7 37c07544408b
 - [x] Commit logs by file
 - [x] Excel friendly html table
 - [x] With source diff 
+- [x] Diff options: side-by-side or line-by-line and clear 
 - [ ] Filter files with certain extensions
 - [ ] Style & Typography - not happy with it
 - [ ] HTML Filter by file types?
