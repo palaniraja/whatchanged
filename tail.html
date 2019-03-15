@@ -1,7 +1,7 @@
 </table>
 <script type="text/javascript">
 
-    function doDiff(){
+    function doDiff(viewOption){
         for (var i = 0; i <fileCount; i++) {
             var rawDiff = document.getElementById('rawDiff'+i).value;
             var outDiff = document.getElementById('outDiff'+i)
@@ -9,14 +9,22 @@
                                                                 inputFormat: 'diff', 
                                                                 showFiles: false, 
                                                                 matching: 'words', 
-                                                                outputFormat: 'side-by-side' //or 'line-by-line' // For more options refer: https://github.com/rtfpessoa/diff2html#configuration
+                                                                outputFormat: viewOption //either 'line-by-line' or 'side-by-side'// For more options refer: https://github.com/rtfpessoa/diff2html#configuration
                                                             }
                                                     );
             outDiff.innerHTML = diffHtml;
         }
     }
 
-    doDiff(); //dirty, do rightaway.
+
+    function clearDiff(){
+        for (var i = 0; i <fileCount; i++) {
+            var outDiff = document.getElementById('outDiff'+i);
+            outDiff.innerHTML = '';
+        }
+    }
+
+    doDiff('line-by-line'); //dirty, do rightaway.
 
 </script>
 </body>

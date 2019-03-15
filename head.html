@@ -16,10 +16,20 @@
         display: none;
     }
 
+    div.options{
+        padding: 1em 0em;
+        font-weight: 400;
+    }
+
     </style>
 <script type='text/javascript'>
     var fileCount=0;
+    //was supposed to set the value later at the end of loop in .sh file. Not working hence the script insert {var} everytime.
 </script>
+<div class="options">
+    View Diff : <button onclick="doDiff('side-by-side');">Side-By-Side</button> <button onclick="doDiff('line-by-line');">Line-By-Line</button> <button onclick="clearDiff();">Clear Diff</button> 
+    <hr />
+</div>
 </head>
 <body>
 

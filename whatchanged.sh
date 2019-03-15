@@ -16,20 +16,20 @@ echo "End at Commit SHA: $2"
 
 echo "<p>Files changed between <b>$1</b> and <b>$2</b></p>"  >> $outputFile
 echo "<table border=1 style='border-collapse: collapse;'>" >> $outputFile
-git log --pretty='format:' --name-only $1..$2 | sort -u | while read line
+git log --pretty='format:' --name-only $1..$2 | uniq | while read line
 do
     if [ -n "${line}" ]; then
         `echo "<tr>" >> $outputFile`
         `echo "<td> <h3>File: ($line)</h3>" >> $outputFile`
         `echo "<p>" >> $outputFile`
         
-        git log --pretty=oneline  --abbrev-commit $1..$2  -- $line >> $outputFile
+        git log --pretty="[%h] %s <br />" $1..$2  -- $line >> $outputFile
         # --all --full-history
         
         `echo "</p><textarea class='rawDiff' id='rawDiff$index'>" >> $outputFile`
         
         diffString=$(git diff $1..$2  -- $line)
-        `echo "$diffString</textarea><div class='outDiff' id='outDiff$index'>PRETTY HERE</div></td></tr>" >> $outputFile`
+        `echo "$diffString</textarea><div class='outDiff' id='outDiff$index'>{{loading diff...}}</div></td></tr>" >> $outputFile`
         
         index=$((index + 1))
 
