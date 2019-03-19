@@ -1,6 +1,6 @@
 
 echo "===========================================\n"
-echo "Usage: $0 <startCommitSHA> <startCommitSHA>\n"
+echo "Usage: $0 <startCommitSHA> <endCommitSHA>\n"
 echo "===========================================\n\n\n"
 
 outputFile="diff.html"
