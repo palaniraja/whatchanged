@@ -16,7 +16,7 @@ echo "End at Commit SHA: $2"
 
 echo "<p>Files changed between <b>$1</b> and <b>$2</b></p>"  >> $outputFile
 echo "<table border=1 style='border-collapse: collapse;'>" >> $outputFile
-git log --pretty='format:' --name-only $1..$2 | uniq | while read line
+git log --pretty='format:' --name-only $1..$2 | sort -u | while read line
 do
     if [ -n "${line}" ]; then
         `echo "<tr>" >> $outputFile`
