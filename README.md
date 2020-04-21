@@ -37,4 +37,4 @@ sh whatchanged.sh 3b9aea39c7 37c07544408b
 A lot of dirty tricks involved, but hey it gets the job done. Will try to tidy up _later*_
 
 
-Feel free to send me a pull requests
+Feel free to send me pull requests
